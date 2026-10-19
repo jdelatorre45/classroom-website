@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Moments | Ms. Palarca's Classroom</title>
+  
+  <!-- Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    A LITTLE CREATIVITY. A LOT OF PURPOSE.
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="classroom-tag">MS. PALARCA’S CLASSROOM & CREATIVE CORNER</div>
+    <h1 class="main-title">
+      <a href="index.html" class="title-link">
+        The Daring <br>
+        <span class="italic-title">English Teacher</span>
+      </a>
+    </h1>
+    
+    <nav class="navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="courses.html">My Courses</a>
+      <a href="resources.html">Resources</a>
+      <a href="support.html">Student Support</a>
+      <a href="memories.html" class="active">Classroom Moments</a>
+    </nav>
+  </header>
+
+  <!-- Moments Main Section -->
+  <main class="moments-container">
+    <div class="moments-header">
+      <span class="sub-label">BEYOND THE LESSON PLAN</span>
+      <h2 class="moments-headline">The little moments matter.</h2>
+      <p class="moments-description">
+        A space for the ideas, connections, and small victories that make a classroom feel like ours.
+      </p>
+    </div>
+
+    <!-- Slideshow Wrapper -->
+    <div class="carousel-container" id="carouselWrapper">
+      <button type="button" class="carousel-arrow prev" onclick="moveSlide(-1)" aria-label="Previous slide">&#10094;</button>
+
+      <div class="slides-viewport">
+        
+        <!-- Slide 1: Original 3 Polaroids -->
+        <div class="slide-group active">
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card tilt-left">
+            <div class="polaroid-inner-frame bg-tan">
+              <span class="polaroid-text">“Aha!”</span>
+              <!-- When using real photos, replace text with: <img src="images/moment1.jpg" alt="Breakthrough moment" class="polaroid-photo"> -->
+            </div>
+            <h3 class="polaroid-title">When it finally clicks</h3>
+            <p class="polaroid-caption">Future gallery &middot; Learning breakthroughs</p>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card tilt-straight">
+            <div class="polaroid-inner-frame bg-sage">
+              <span class="polaroid-text">Together.</span>
+            </div>
+            <h3 class="polaroid-title">Better together</h3>
+            <p class="polaroid-caption">Future gallery &middot; Collaboration & connection</p>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card tilt-right">
+            <div class="polaroid-inner-frame bg-lavender">
+              <span class="polaroid-text">One brave idea.</span>
+            </div>
+            <h3 class="polaroid-title">Voices worth celebrating</h3>
+            <p class="polaroid-caption">Future gallery &middot; Student creativity</p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Second Set of Moments -->
+        <div class="slide-group">
+          <!-- Polaroid 4 -->
+          <div class="polaroid-card tilt-left">
+            <div class="polaroid-inner-frame bg-blush">
+              <span class="polaroid-text">Curious.</span>
+            </div>
+            <h3 class="polaroid-title">Deep reading</h3>
+            <p class="polaroid-caption">Future gallery &middot; Critical analysis</p>
+          </div>
+
+          <!-- Polaroid 5 -->
+          <div class="polaroid-card tilt-straight">
+            <div class="polaroid-inner-frame bg-cream">
+              <span class="polaroid-text">Ink & flow.</span>
+            </div>
+            <h3 class="polaroid-title">Drafting days</h3>
+            <p class="polaroid-caption">Future gallery &middot; Writing workshops</p>
+          </div>
+
+          <!-- Polaroid 6 -->
+          <div class="polaroid-card tilt-right">
+            <div class="polaroid-inner-frame bg-sage">
+              <span class="polaroid-text">Smiles.</span>
+            </div>
+            <h3 class="polaroid-title">Everyday joy</h3>
+            <p class="polaroid-caption">Future gallery &middot; Room 204 community</p>
+          </div>
+        </div>
+
+      </div>
+
+      <button type="button" class="carousel-arrow next" onclick="moveSlide(1)" aria-label="Next slide">&#10095;</button>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="carousel-dots">
+      <span class="dot active" onclick="jumpToSlide(0)"></span>
+      <span class="dot" onclick="jumpToSlide(1)"></span>
+    </div>
+
+    <p class="moments-footer-note">
+      Every school year brings new stories, breakthrough moments, and reasons to celebrate.
+    </p>
+  </main>
+
+  <!-- Grounding Theme Footer Strip -->
+  <div class="philosophy-strip">
+    <span>Read with curiosity.</span>
+    <span class="spark">&#10022;</span>
+    <span>Write with purpose.</span>
+    <span class="spark">&#10022;</span>
+    <span>Grow with confidence.</span>
+  </div>
+
+  <!-- Slideshow Script (Auto-cycles every 5 seconds) -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-group');
+    const dots = document.querySelectorAll('.dot');
+    let autoPlayTimer;
+
+    function showSlide(index) {
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
+
+      slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    function moveSlide(direction) {
+      showSlide(currentSlide + direction);
+      resetAutoPlay();
+    }
+
+    function jumpToSlide(index) {
+      showSlide(index);
+      resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5000); // 5000 ms = 5 seconds
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+
+    // Pause on hover so users can inspect photos without it jumping
+    const wrapper = document.getElementById('carouselWrapper');
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    wrapper.addEventListener('mouseleave', () => startAutoPlay());
+
+    // Start on load
+    startAutoPlay();
+  </script>
+
+</body>
+</html>

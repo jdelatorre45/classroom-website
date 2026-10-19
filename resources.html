@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | Ms. Palarca's Classroom</title>
+  
+  <!-- Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    A LITTLE CREATIVITY. A LOT OF PURPOSE.
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="classroom-tag">MS. PALARCA’S CLASSROOM & CREATIVE CORNER</div>
+    <h1 class="main-title">
+      <a href="index.html" class="title-link">
+        The Daring <br>
+        <span class="italic-title">High School Teacher</span>
+      </a>
+    </h1>
+    
+    <nav class="navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="courses.html">My Courses</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="support.html">Student Support</a>
+      <a href="memories.html">Classroom Moments</a>
+    </nav>
+  </header>
+
+  <!-- Resources Main Content -->
+  <main class="resources-container">
+    
+    <!-- Header Row -->
+    <div class="resources-header-row">
+      <div>
+        <span class="sub-label">THE RESOURCE SHELF</span>
+        <h2 class="resources-headline">A little help. A big difference.</h2>
+      </div>
+      <div class="resources-subtext">
+        OPEN A MINI GUIDE BELOW
+      </div>
+    </div>
+
+    <!-- 3-Column Resource Cards Grid -->
+    <div class="resource-cards-grid">
+      
+      <!-- Card 01 -->
+      <div class="resource-card">
+        <span class="resource-number">01 /</span>
+        <h3 class="resource-card-title">The Analytical<br>Writing Toolkit</h3>
+        <p class="resource-card-desc">
+          Move from spotting a feature to explaining how it shapes meaning and affects readers.
+        </p>
+        <button type="button" class="resource-card-link" onclick="openModal('modal-1')">Open the toolkit &nearr;</button>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="resource-card">
+        <span class="resource-number">02 /</span>
+        <h3 class="resource-card-title">The Purposeful<br>Writer’s Checklist</h3>
+        <p class="resource-card-desc">
+          Keep audience, purpose, form, and voice at the heart of your next writing task.
+        </p>
+        <button type="button" class="resource-card-link" onclick="openModal('modal-2')">View the checklist &nearr;</button>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="resource-card">
+        <span class="resource-number">03 /</span>
+        <h3 class="resource-card-title">Words That<br>Connect Ideas</h3>
+        <p class="resource-card-desc">
+          A small collection of useful transitions for comparing, developing, and qualifying ideas.
+        </p>
+        <button type="button" class="resource-card-link" onclick="openModal('modal-3')">Browse the word bank &nearr;</button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ================= POP-UP MODALS ================= -->
+
+  <!-- Modal 1: The Analytical Writing Toolkit -->
+  <div id="modal-1" class="modal-overlay" onclick="handleBackdropClick(event, 'modal-1')">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeModal('modal-1')" aria-label="Close modal">&times;</button>
+      <span class="modal-label">FROM THE RESOURCE SHELF</span>
+      <h3 class="modal-title">The Analytical Writing Toolkit</h3>
+      <ul class="modal-bullets">
+        <li><strong>Point:</strong> Make a clear claim about a specific choice the writer makes.</li>
+        <li><strong>Evidence:</strong> Use a short, relevant quotation to support your point.</li>
+        <li><strong>Effect:</strong> Explain how the choice shapes meaning, tone, or the reader’s response in this particular context.</li>
+        <li><strong>Link:</strong> Connect your explanation to purpose, audience, or your comparison.</li>
+        <li><strong>For comparative writing:</strong> Connect both texts within your paragraph. Explain a meaningful similarity or difference, rather than listing features.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal 2: The Purposeful Writer's Checklist -->
+  <div id="modal-2" class="modal-overlay" onclick="handleBackdropClick(event, 'modal-2')">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeModal('modal-2')" aria-label="Close modal">&times;</button>
+      <span class="modal-label">FROM THE RESOURCE SHELF</span>
+      <h3 class="modal-title">The Purposeful Writer’s Checklist</h3>
+      <ul class="modal-bullets">
+        <li><strong>Audience:</strong> Who will read this? What do they know, need, or care about?</li>
+        <li><strong>Purpose:</strong> What should the reader think, feel, understand, or do?</li>
+        <li><strong>Form:</strong> Which conventions suit this text type?</li>
+        <li><strong>Structure:</strong> Does each paragraph move the writing forward?</li>
+        <li><strong>Language:</strong> Do vocabulary, tone, and sentence choices suit the task?</li>
+        <li><strong>Review:</strong> Check clarity, accuracy, and the task’s word guidance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal 3: Words That Connect Ideas -->
+  <div id="modal-3" class="modal-overlay" onclick="handleBackdropClick(event, 'modal-3')">
+    <div class="modal-card">
+      <button type="button" class="modal-close" onclick="closeModal('modal-3')" aria-label="Close modal">&times;</button>
+      <span class="modal-label">FROM THE RESOURCE SHELF</span>
+      <h3 class="modal-title">Words That Connect Ideas</h3>
+      <ul class="modal-bullets">
+        <li><strong>Compare:</strong> Similarly &middot; Likewise &middot; In a comparable way</li>
+        <li><strong>Contrast:</strong> In contrast &middot; Conversely &middot; Whereas &middot; While</li>
+        <li><strong>Develop:</strong> Furthermore &middot; In addition &middot; More specifically</li>
+        <li><strong>Explain an effect:</strong> This suggests… &middot; This emphasizes… &middot; This positions the reader to…</li>
+        <li><strong>Qualify:</strong> To some extent &middot; Although &middot; Arguably</li>
+        <li>Use transitions for a clear relationship between ideas. Precise explanation matters more than an impressive word.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Grounding Theme Footer Strip -->
+  <div class="philosophy-strip">
+    <span>Read with curiosity.</span>
+    <span class="spark">&#10022;</span>
+    <span>Write with purpose.</span>
+    <span class="spark">&#10022;</span>
+    <span>Grow with confidence.</span>
+  </div>
+
+  <!-- JavaScript for Modal Interactivity -->
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop background page scrolling
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore page scrolling
+      }
+    }
+
+    function handleBackdropClick(event, id) {
+      if (event.target === event.currentTarget) {
+        closeModal(id);
+      }
+    }
+
+    // Close when ESC key is pressed
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => {
+          m.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
